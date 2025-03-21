@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"65193ea6d3270616","x":-280,"y":-100,"width":250,"height":295,"type":"text","text":"Todo\n___________________\nTitle\nDescription\nIs Completed\nCreated Date\nCompleted Date"},
+		{"id":"ff6149443f38b9fd","x":-251,"y":-740,"width":192,"height":207,"type":"text","text":"User\n_____________\nName\nProjects"},
+		{"id":"38a3fbedc8fe4ec7","x":-251,"y":-440,"width":192,"height":180,"type":"text","text":"Project\n_________________\nTitle\nTodoList"}
+	],
+	"edges":[
+		{"id":"a0b39976c9991467","fromNode":"ff6149443f38b9fd","fromSide":"bottom","toNode":"38a3fbedc8fe4ec7","toSide":"top"},
+		{"id":"5ad766f68c68b2e0","fromNode":"38a3fbedc8fe4ec7","fromSide":"bottom","toNode":"65193ea6d3270616","toSide":"top"}
+	]
+}

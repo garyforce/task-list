@@ -1,0 +1,15 @@
+one:
+  title: "First Todo"
+  description: "This is the first todo."
+  is_completed: false
+  created_at: <%= Time.current %>
+  completed_at: 
+  project: one
+
+two:
+  title: "Second Todo"
+  description: "This is the second todo."
+  is_completed: true
+  created_at: <%= Time.current %>
+  completed_at: <%= Time.current %>
+  project: two

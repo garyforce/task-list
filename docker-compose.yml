@@ -1,0 +1,45 @@
+services: 
+  backend:
+    build:
+      context: ./Backend
+    depends_on:
+      - db    
+    command: bundle exec rails s -b '0.0.0.0'
+    volumes:
+      - .:/backend
+    ports:
+      - "3000:3000"
+    expose:
+      - 3000
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./Frontend
+    command: npx expo start --web
+    ports:
+      - 8080-8081:8081
+    expose:
+      - 8081
+    restart: unless-stopped
+
+  db:
+    image: postgres:17.2
+    restart: unless-stopped
+    container_name: postgres
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
